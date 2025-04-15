@@ -19,7 +19,7 @@ public class PrefabSpawner : MonoBehaviour
         }
     }
 
-    void SpawnWithImpulse()
+    public void SpawnWithImpulse()
     {
         if (prefab == null || spawnPoint == null)
         {
