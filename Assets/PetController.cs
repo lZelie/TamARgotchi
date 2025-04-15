@@ -8,6 +8,7 @@ public class PetController : MonoBehaviour
     public PetNeeds needs;
     private CharacterAnimatorController animatorController;
     private PrefabSpawner CacaSpawner;
+    private AudioSource bruitCaca;
 
     [Tooltip("multiplie every increase by a random number in 1: ...")]
     public float randomIncreaseFactor = 3.0f;
@@ -33,8 +34,12 @@ public class PetController : MonoBehaviour
     //hardréférence codé psk flemne de faire autrement
     [SerializeField] private EventScheduler scheduler;
     [SerializeField] private ButtonSelector buttonSelector;
-    
 
+
+    void Start()
+    {
+        bruitCaca = GetComponent<AudioSource>();
+    }
     public void commencerLeGameplay(GameObject pikachu){
         animatorController = pikachu.GetComponent<CharacterAnimatorController>();
         CacaSpawner = pikachu.GetComponent<PrefabSpawner>();
@@ -122,6 +127,7 @@ public class PetController : MonoBehaviour
         float chier_time = 1.0f;
         animatorController.delayedSetPooping(0);
         animatorController.delayedSetIdle(1.2f);
+        Invoke("bruitChier", 1.0f);
         int cacaCount = Random.Range(1, 4);
         for(int numerocaca =0; numerocaca <= cacaCount; numerocaca++){
             float rddelay = Random.value / 4.0f;
@@ -129,6 +135,10 @@ public class PetController : MonoBehaviour
         }
         //animator.SetBool("IsPooping", true);
     }
+    public void bruitChier(){
+        bruitCaca.Play();
+    }
+
     private void pleurer(){
         Debug.Log("<color=#00FF55>je pleure ouin ouin</color>");
 
@@ -181,7 +191,7 @@ public class PetController : MonoBehaviour
             isDancing = true;
             animatorController.delayedSetDance(0);
             majLesProgressBar();
-            Invoke("stopDancing", 13);
+            Invoke("stopDancing", 6.5f);
         } else{
             Debug.Log("<color=purple>Je m'ennuie et je ne vuex plus dancer maintenant ...</color>");
         }
