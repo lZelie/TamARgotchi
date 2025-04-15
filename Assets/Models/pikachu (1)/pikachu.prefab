@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5577617124291953430}
   - component: {fileID: 5087148252677616474}
   - component: {fileID: 6011943998041959509}
+  - component: {fileID: 7069241116675152861}
   m_Layer: 0
   m_Name: pikachu
   m_TagString: Untagged
@@ -36,6 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8960921782025203398}
+  - {fileID: 4881226803658010291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &721142060641467469
@@ -61,7 +63,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2291714653457177181}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -78,7 +80,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &830246217929966922
 MonoBehaviour:
@@ -237,7 +239,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -257,6 +259,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fddc448e76a634c864fb0e9fd91491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7069241116675152861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2291714653457177181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0c075c800eb774ab4f359f8abe87b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6230451478526015771, guid: 50002f9c9005b104c981d2ad89a6a32f, type: 3}
+  spawnPoint: {fileID: 4881226803658010291}
+  impulseForce: 2
+  direction: {x: 0, y: 0.7071068, z: 0.7071068}
+  spawnKey: 102
+--- !u!1 &2425542667417428519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4881226803658010291}
+  m_Layer: 0
+  m_Name: cacaspawnpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4881226803658010291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425542667417428519}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.016530335, y: 0.529, z: 0.604}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3292567711247029416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &514331490808251912
 PrefabInstance:
   m_ObjectHideFlags: 0
