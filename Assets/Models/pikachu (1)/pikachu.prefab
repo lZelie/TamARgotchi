@@ -274,14 +274,18 @@ MonoBehaviour:
   spawnables:
   - prefab: {fileID: 6230451478526015771, guid: 50002f9c9005b104c981d2ad89a6a32f,
       type: 3}
-    spawnChance: 0.95
+    spawnChance: 0.85
+  - prefab: {fileID: 6614523615476508760, guid: 2bddcfd2959ca8744aa6f84f5c719be7,
+      type: 3}
+    spawnChance: 0.125
   - prefab: {fileID: 6614523615476508760, guid: dcb5adc644296bd43ba9520eb0df0f7e,
       type: 3}
-    spawnChance: 0.05
+    spawnChance: 0.025
   spawnPoint: {fileID: 4881226803658010291}
   impulseForce: 2
   direction: {x: 0, y: 0.7071068, z: 0.7071068}
   spawnKey: 102
+  coneAngle: 15
 --- !u!1 &2425542667417428519
 GameObject:
   m_ObjectHideFlags: 0
