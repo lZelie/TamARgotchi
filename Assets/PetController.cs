@@ -9,6 +9,7 @@ public class PetController : MonoBehaviour
     private CharacterAnimatorController animatorController;
     private PrefabSpawner CacaSpawner;
     private AudioSource bruitCaca;
+    private PrefabSpawner lightningSpawner;
 
     [Tooltip("multiplie every increase by a random number in 1: ...")]
     public float randomIncreaseFactor = 3.0f;
@@ -43,6 +44,7 @@ public class PetController : MonoBehaviour
     public void commencerLeGameplay(GameObject pikachu){
         animatorController = pikachu.GetComponent<CharacterAnimatorController>();
         CacaSpawner = pikachu.GetComponent<PrefabSpawner>();
+        lightningSpawner = pikachu.transform.Find("thor").GetComponent<PrefabSpawner>();
         scheduler.cestParti();
     }
 
@@ -148,7 +150,7 @@ public class PetController : MonoBehaviour
     }
     private void seFaireFoudroyer(){
         Debug.Log("<color=yellow>Je me suis fait FOUDROYER</color>");
-        //todo - animation
+        lightningSpawner.SpawnWithImpulse();
     }
 
     public void ClickedOnPikachu(){
