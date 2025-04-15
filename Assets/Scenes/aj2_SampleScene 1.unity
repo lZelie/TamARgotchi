@@ -1097,8 +1097,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   delayBeforeInit: 3
-  minDelay: 3
-  maxDelay: 4
+  minDelay: 2
+  maxDelay: 3
 --- !u!4 &1381396170
 Transform:
   m_ObjectHideFlags: 0

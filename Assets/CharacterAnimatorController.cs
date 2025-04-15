@@ -97,4 +97,7 @@ public class CharacterAnimatorController : MonoBehaviour
     public void delayedSetIdle(float delay){
         Invoke("SetIdle", delay);
     }
+    public void delayedSetDance(float delay){
+        Invoke("SetDance", delay);
+    }
 }

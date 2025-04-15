@@ -5,6 +5,7 @@ using UnityEngine;
 public class GiveMyAnimatorToGameManager : MonoBehaviour
 {
     private Animator animator;
+    PetController managerScript;
 
     void Awake()
     {
@@ -15,7 +16,7 @@ public class GiveMyAnimatorToGameManager : MonoBehaviour
         if (petManager != null)
         {
             // Get the GameManager component and call Init
-            PetController managerScript = petManager.GetComponent<PetController>();
+            managerScript = petManager.GetComponent<PetController>();
             if (managerScript != null)
             {
                 managerScript.commencerLeGameplay(gameObject);
@@ -29,5 +30,9 @@ public class GiveMyAnimatorToGameManager : MonoBehaviour
         {
             Debug.LogWarning("PetManager pas trouvé dans le scène");
         }
+    }
+
+    public void callClickOnMeInPetManager(){
+        managerScript.ClickedOnPikachu();
     }
 }

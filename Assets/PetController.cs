@@ -15,6 +15,7 @@ public class PetController : MonoBehaviour
     // Pet states
     private int poopCount = 0;
     private bool isSad = false;
+    private bool isDancing = false;
     
     public UnityEvent onPoopCritical;
     public UnityEvent onSadCritical;
@@ -139,7 +140,24 @@ public class PetController : MonoBehaviour
         //todo - animation
     }
 
-
+    public void ClickedOnPikachu(){
+        int buttonSelected = 3; //todo change et base on real button
+        switch(buttonSelected){
+            case 0: //aucun bouton sélectionné - ne fait rien
+                break;
+            case 1: // karma
+                //todo faire qqch
+                break;
+            case 2: // PQ - ne rien faire
+                break;
+            case 3: //coeur : dance
+                Play();
+                break;
+            default:
+                Debug.Log("rien à faire");
+                break;
+        }
+    }
     
 
     // Interaction methods called by touch gestures
@@ -158,12 +176,23 @@ public class PetController : MonoBehaviour
     [ContextMenu("Call Play")]
     public void Play()
     {
-        // Reduce sadness
-        needs.sadnessLevel -= 20f;
-        needs.karmaLevel += 3f;
-        //animator.SetTrigger("Play");
+        if(!isDancing){
+            // Reduce sadness
+            needs.sadnessLevel -= 20f;
+            needs.karmaLevel += 3f;
+            isDancing = true;
+            animatorController.delayedSetDance(0);
+            majLesProgressBar();
+            Invoke("stopDancing", 13);
+        } else{
+            Debug.Log("<color=purple>Je m'ennuie et je ne vuex plus dancer maintenant ...</color>");
+        }
+    }
 
-        majLesProgressBar();
+    void stopDancing(){
+        isDancing = false;
+        Debug.Log("<color=purple>Je suis à nouveau près à danser !!! masterclasse.</color>");
+        animatorController.delayedSetIdle(0);
     }
     
     [ContextMenu("Call Feed")]
