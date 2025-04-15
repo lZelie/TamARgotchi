@@ -27,11 +27,15 @@ public class PetController : MonoBehaviour
 
     //used only for debug
     private float lastTime = 0.0f;
+
+    //hardréférence codé psk flemne de faire autrement
+    [SerializeField] private EventScheduler scheduler;
     
-    
-    void Start()
-    {
-        animator = GetComponent<Animator>();
+
+    public void commencerLeGameplay(GameObject pikachu){
+        animator = pikachu.GetComponent<Animator>();
+        //rcup le controller
+        scheduler.cestParti();
     }
 
     public void debugloginfo(){

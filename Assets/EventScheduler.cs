@@ -13,10 +13,11 @@ public class EventScheduler : MonoBehaviour{
     [SerializeField] private float minDelay = 3.0f;
     [Tooltip("durée max avant un autre event")]
     [SerializeField] private float maxDelay = 5.0f;
-    private void Start()
+    public void cestParti()
     {
+        Debug.Log("<color=#0CCC5F>The game is starting !!!!</color>");
         // Lancer le premier événement après un délai initial
-        Invoke("ScheduleNextEvent", delayBeforeInit);
+        Invoke("ScheduleNextEvent",0);
     }
 
     private void ScheduleNextEvent()
