@@ -30,7 +30,7 @@ public class PrefabSpawner : MonoBehaviour
         }
     }
 
-    void SpawnWithImpulse()
+    public void SpawnWithImpulse()
     {
         if (spawnables.Count == 0 || spawnPoint == null)
         {

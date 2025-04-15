@@ -7,6 +7,7 @@ public class PetController : MonoBehaviour
 {
     public PetNeeds needs;
     private Animator animator;
+    private PrefabSpawner CacaSpawner;
 
     [Tooltip("multiplie every increase by a random number in 1: ...")]
     public float randomIncreaseFactor = 3.0f;
@@ -34,7 +35,7 @@ public class PetController : MonoBehaviour
 
     public void commencerLeGameplay(GameObject pikachu){
         animator = pikachu.GetComponent<Animator>();
-        //rcup le controller
+        CacaSpawner = pikachu.GetComponent<PrefabSpawner>();
         scheduler.cestParti();
     }
 
@@ -113,10 +114,14 @@ public class PetController : MonoBehaviour
     private void faireGrosCaca(){
         Debug.Log("<color=red>g fait un gros caca !</color>");
 
-        poopCount += 1;
-        //animator.SetBool("IsPooping", true);
+        poopCount += 1; //ne sert plus à rien
 
-        //todo - animation + spawn poop + reserver 100 Mo de RAM
+        //todo animation
+        int cacaCount = Random.Range(1, 4);
+        for(int numerocaca =0; numerocaca <= cacaCount; numerocaca++){
+            CacaSpawner.SpawnWithImpulse();
+        }
+        //animator.SetBool("IsPooping", true);
     }
     private void pleurer(){
         Debug.Log("<color=#00FF55>je pleure ouin ouin</color>");
