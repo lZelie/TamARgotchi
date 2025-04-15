@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EventScheduler : MonoBehaviour{
     public UnityEvent processEvent; // Callback à appeler
-    private float lastTime =0;
     
     [Tooltip("delay en seconde avant le call du premier schedule pour offset le temps de start de l'appli")]
     [SerializeField] private float delayBeforeInit = 3.0f;
@@ -37,26 +36,5 @@ public class EventScheduler : MonoBehaviour{
         processEvent?.Invoke();
         // Planifier le prochain événement
         ScheduleNextEvent();
-    }
-
-    public void doSomething(){
-        //ackshually args are just some global variable
-        float sinceLast =  Time.time - lastTime;
-        lastTime =  Time.time;
-        Debug.Log($"since last : {sinceLast} /  total : {lastTime}");
-
-        int randomCase = Random.Range(0, 3); // Génère 0, 1 ou 2
-        switch (randomCase)
-        {
-            case 0: //happyness 
-                Debug.Log("Cas 1 : le bonheur");
-                break;
-            case 1: // caca
-                Debug.Log("Cas 2 : le caca");
-                break;
-            case 2: // karma
-                Debug.Log("Cas 3 : le karma");
-                break;
-        }
     }
 }
