@@ -80,6 +80,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8308379596140612746}
+    - targetCorrespondingSourceObject: {fileID: 6230451478526015771, guid: 50002f9c9005b104c981d2ad89a6a32f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1790696373844248732}
   m_SourcePrefab: {fileID: 100100000, guid: 50002f9c9005b104c981d2ad89a6a32f, type: 3}
 --- !u!1 &6614523615476508760 stripped
 GameObject:
@@ -134,7 +138,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1790696373844248732}
+        m_TargetAssemblyTypeName: PoopClean, Assembly-CSharp
+        m_MethodName: CleanPoop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -231,3 +247,15 @@ MonoBehaviour:
   m_Elasticity: 0.15
   m_EnableElasticBreakLimit: 1
   m_ElasticBreakLimit: 0.5
+--- !u!114 &-1790696373844248732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614523615476508760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fb2cfc298c945fb8de951a12e92575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

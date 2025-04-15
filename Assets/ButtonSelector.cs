@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class ButtonSelector : MonoBehaviour
 {
@@ -10,8 +11,12 @@ public class ButtonSelector : MonoBehaviour
 
     [Header("Liste des boutons")]
     [SerializeField] private List<Button> buttons;
+    
+    [Header("ObjectSpawner")]
+    [SerializeField] private ObjectSpawner objectSpawner;
 
     private Button currentSelected;
+    public int SelectedButtonIndex { get; private set; }
 
     private void Start()
     {
@@ -31,6 +36,8 @@ public class ButtonSelector : MonoBehaviour
         {
             clicked.image.color = defaultColor;
             currentSelected = null;
+            SelectedButtonIndex = -1;
+            objectSpawner.selectedButton = -1;
             return;
         }
 
@@ -47,6 +54,8 @@ public class ButtonSelector : MonoBehaviour
 
     private void LaunchProgram(int index)
     {
+        SelectedButtonIndex = index;
+        objectSpawner.selectedButton = index;
         switch (index)
         {
             case 0:
