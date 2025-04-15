@@ -271,7 +271,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0c075c800eb774ab4f359f8abe87b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6230451478526015771, guid: 50002f9c9005b104c981d2ad89a6a32f, type: 3}
+  spawnables:
+  - prefab: {fileID: 6230451478526015771, guid: 50002f9c9005b104c981d2ad89a6a32f,
+      type: 3}
+    spawnChance: 0.95
+  - prefab: {fileID: 6614523615476508760, guid: dcb5adc644296bd43ba9520eb0df0f7e,
+      type: 3}
+    spawnChance: 0.05
   spawnPoint: {fileID: 4881226803658010291}
   impulseForce: 2
   direction: {x: 0, y: 0.7071068, z: 0.7071068}
