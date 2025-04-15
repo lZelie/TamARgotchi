@@ -18,7 +18,12 @@ public class PetController : MonoBehaviour
     public UnityEvent onPoopCritical;
     public UnityEvent onSadCritical;
     public UnityEvent onKamikazeCritical;
-
+    
+    // progress bar
+    private const int PGB_MAX_VAL = 9;
+    [SerializeField] private ProgressBarManager pgb_caca;
+    [SerializeField] private ProgressBarManager pgb_happy;
+    [SerializeField] private ProgressBarManager pgb_karma;
 
     //used only for debug
     private float lastTime = 0.0f;
@@ -31,6 +36,12 @@ public class PetController : MonoBehaviour
 
     public void debugloginfo(){
         Debug.Log($"poop : {needs.poopLevel} /  sadness : {needs.sadnessLevel} / karma {needs.karmaLevel}");
+    }
+
+    public void majLesProgressBar(){
+        pgb_caca.SetValue((int)(needs.poopLevel / (100/PGB_MAX_VAL)));
+        pgb_happy.SetValue((int)(needs.sadnessLevel / (100/PGB_MAX_VAL)));
+        pgb_karma.SetValue((int)(needs.karmaLevel / (100/PGB_MAX_VAL)));
     }
     
     public void UpdateNeeds()
@@ -65,6 +76,8 @@ public class PetController : MonoBehaviour
         needs.poopLevel = Mathf.Clamp(needs.poopLevel, 0f, 100f);
         needs.sadnessLevel = Mathf.Clamp(needs.sadnessLevel, 0f, 100f);
         needs.karmaLevel = Mathf.Clamp(needs.karmaLevel, 0f, 100f);
+
+        majLesProgressBar();
         
         // Update animations and visuals based on states
         UpdatePetState();
@@ -126,6 +139,7 @@ public class PetController : MonoBehaviour
         poopCount = -1;
         //animator.SetBool("IsPooping", false);
         needs.karmaLevel += 5f; // Reward for cleaning
+        majLesProgressBar();
     }
     
     [ContextMenu("Call Play")]
@@ -135,6 +149,8 @@ public class PetController : MonoBehaviour
         needs.sadnessLevel -= 20f;
         needs.karmaLevel += 3f;
         //animator.SetTrigger("Play");
+
+        majLesProgressBar();
     }
     
     [ContextMenu("Call Feed")]
@@ -145,5 +161,7 @@ public class PetController : MonoBehaviour
         needs.poopLevel += 15f;
         needs.karmaLevel += 2f;
         //animator.SetTrigger("Eat");
+
+        majLesProgressBar();
     }
 }
