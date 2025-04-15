@@ -1551,6 +1551,7 @@ MonoBehaviour:
   pgb_happy: {fileID: 1997458763}
   pgb_karma: {fileID: 999226726}
   scheduler: {fileID: 1381396169}
+  buttonSelector: {fileID: 932392725}
 --- !u!4 &1996834722
 Transform:
   m_ObjectHideFlags: 0

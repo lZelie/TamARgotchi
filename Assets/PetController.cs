@@ -32,6 +32,7 @@ public class PetController : MonoBehaviour
 
     //hardréférence codé psk flemne de faire autrement
     [SerializeField] private EventScheduler scheduler;
+    [SerializeField] private ButtonSelector buttonSelector;
     
 
     public void commencerLeGameplay(GameObject pikachu){
@@ -141,16 +142,13 @@ public class PetController : MonoBehaviour
     }
 
     public void ClickedOnPikachu(){
-        int buttonSelected = 3; //todo change et base on real button
-        switch(buttonSelected){
-            case 0: //aucun bouton sélectionné - ne fait rien
-                break;
-            case 1: // karma
+        switch(buttonSelector.SelectedButtonIndex){
+            case 0: // karma
                 //todo faire qqch
                 break;
-            case 2: // PQ - ne rien faire
+            case 1: // PQ - ne rien faire
                 break;
-            case 3: //coeur : dance
+            case 2: //coeur : dance
                 Play();
                 break;
             default:
