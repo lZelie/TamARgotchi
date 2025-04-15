@@ -119,7 +119,8 @@ public class PetController : MonoBehaviour
         //todo animation
         int cacaCount = Random.Range(1, 4);
         for(int numerocaca =0; numerocaca <= cacaCount; numerocaca++){
-            CacaSpawner.SpawnWithImpulse();
+            float rddelay = Random.value / 4.0f;
+            CacaSpawner.delayedSpawnedWithImmulse(rddelay);
         }
         //animator.SetBool("IsPooping", true);
     }

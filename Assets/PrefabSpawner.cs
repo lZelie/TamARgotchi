@@ -30,6 +30,10 @@ public class PrefabSpawner : MonoBehaviour
         }
     }
 
+    public void delayedSpawnedWithImmulse(float delay){
+        Invoke("SpawnWithImpulse", delay);
+    }
+
     public void SpawnWithImpulse()
     {
         if (spawnables.Count == 0 || spawnPoint == null)
