@@ -151,6 +151,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         /// </summary>
         /// <seealso cref="TrySpawnObject"/>
         public event Action<GameObject> objectSpawned;
+        
+        [SerializeField] [Range(-1, 100)] private int maxObjects = 1;
 
         /// <summary>
         /// See <see cref="MonoBehaviour"/>.
@@ -192,6 +194,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         /// <seealso cref="objectSpawned"/>
         public bool TrySpawnObject(Vector3 spawnPoint, Vector3 spawnNormal)
         {
+            if (maxObjects > -1 && transform.childCount >= maxObjects) return false;
             if (m_OnlySpawnInView)
             {
                 var inViewMin = m_ViewportPeriphery;
