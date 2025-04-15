@@ -11,6 +11,7 @@ public class CharacterAnimatorController : MonoBehaviour
     private InputAction walkAction;
     private InputAction jumpAction;
     private InputAction danceAction;
+    private InputAction poopingAction;
 
     void OnEnable()
     {
@@ -25,16 +26,19 @@ public class CharacterAnimatorController : MonoBehaviour
         walkAction = inputActions.FindActionMap("Tamagochi").FindAction("Walk");
         jumpAction = inputActions.FindActionMap("Tamagochi").FindAction("Jump");
         danceAction = inputActions.FindActionMap("Tamagochi").FindAction("Dance");
+        poopingAction = inputActions.FindActionMap("Tamagochi").FindAction("Pooping");
 
         idleAction.performed += ctx => SetIdle();
         walkAction.performed += ctx => SetWalk();
         jumpAction.performed += ctx => SetJump();
         danceAction.performed += ctx => SetDance();
+        poopingAction.performed += ctx => SetPooping();
 
         idleAction.Enable();
         walkAction.Enable();
         jumpAction.Enable();
         danceAction.Enable();
+        poopingAction.Enable();
     }
 
     void OnDisable()
@@ -43,6 +47,7 @@ public class CharacterAnimatorController : MonoBehaviour
         walkAction?.Disable();
         jumpAction?.Disable();
         danceAction?.Disable();
+        poopingAction?.Disable();
     }
 
     void SetWalk()
@@ -64,6 +69,10 @@ public class CharacterAnimatorController : MonoBehaviour
     {
         SetTrigger("Jump", true);
     }
+    void SetPooping()
+    {
+        SetTrigger("Pooping", true);
+    }
 
     void SetTrigger(string triggerName, bool tryIdleBefore = false)
     {
@@ -76,5 +85,16 @@ public class CharacterAnimatorController : MonoBehaviour
 
             animator.SetTrigger(triggerName);
         }
+    }
+
+
+    public void delayedSetJump(float delay){
+        Invoke("SetJump", delay);
+    }
+    public void delayedSetPooping(float delay){
+        Invoke("SetPooping", delay);
+    }
+    public void delayedSetIdle(float delay){
+        Invoke("SetIdle", delay);
     }
 }

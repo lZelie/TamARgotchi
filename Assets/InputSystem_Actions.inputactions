@@ -1030,6 +1030,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pooping",
+                    "type": "Button",
+                    "id": "f9b3187b-138d-43f5-8109-b47bc652fd86",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1074,6 +1083,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Idle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0f55e1f-99bb-443b-8e77-d1a0141649f1",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pooping",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

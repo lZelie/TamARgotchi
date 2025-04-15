@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PetController : MonoBehaviour
 {
     public PetNeeds needs;
-    private Animator animator;
+    private CharacterAnimatorController animatorController;
     private PrefabSpawner CacaSpawner;
 
     [Tooltip("multiplie every increase by a random number in 1: ...")]
@@ -34,7 +34,7 @@ public class PetController : MonoBehaviour
     
 
     public void commencerLeGameplay(GameObject pikachu){
-        animator = pikachu.GetComponent<Animator>();
+        animatorController = pikachu.GetComponent<CharacterAnimatorController>();
         CacaSpawner = pikachu.GetComponent<PrefabSpawner>();
         scheduler.cestParti();
     }
@@ -112,15 +112,18 @@ public class PetController : MonoBehaviour
     }
 
     private void faireGrosCaca(){
-        Debug.Log("<color=red>g fait un gros caca !</color>");
+        Debug.Log("<color=red>g chier !</color>");
 
         poopCount += 1; //ne sert plus à rien
 
         //todo animation
+        float chier_time = 1.0f;
+        animatorController.delayedSetPooping(0);
+        animatorController.delayedSetIdle(1.2f);
         int cacaCount = Random.Range(1, 4);
         for(int numerocaca =0; numerocaca <= cacaCount; numerocaca++){
             float rddelay = Random.value / 4.0f;
-            CacaSpawner.delayedSpawnedWithImmulse(rddelay);
+            CacaSpawner.delayedSpawnedWithImmulse(chier_time+rddelay);
         }
         //animator.SetBool("IsPooping", true);
     }
