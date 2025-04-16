@@ -604,7 +604,7 @@ PrefabInstance:
     - target: {fileID: 1766468195400975619, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
       propertyPath: m_Intensity
-      value: 2.7582664
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1766468195410917830, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
@@ -620,6 +620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766468195410917883, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: clearBehavior
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1766468195575138654, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
@@ -646,6 +651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 6795888189022279546, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: clearBehavior
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7616790747562279209, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
       propertyPath: playOnAwake
@@ -654,17 +664,17 @@ PrefabInstance:
     - target: {fileID: 8630071398136278618, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.20784314
+      value: 0.5149155
       objectReference: {fileID: 0}
     - target: {fileID: 8630071398136278618, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.74509805
+      value: 0.533324
       objectReference: {fileID: 0}
     - target: {fileID: 8630071398136278618, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
       propertyPath: m_Intensity
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

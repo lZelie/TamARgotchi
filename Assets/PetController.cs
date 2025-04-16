@@ -8,6 +8,7 @@ public class PetController : MonoBehaviour
     public PetNeeds needs;
     private CharacterAnimatorController animatorController;
     private PikAnimAtionController animAtionController;
+    //private ParticleController particleController; //doublons du truc au dessus
     private PrefabSpawner CacaSpawner;
     private AudioSource bruitCaca;
     private PrefabSpawner lightningSpawner;
@@ -45,6 +46,7 @@ public class PetController : MonoBehaviour
     public void commencerLeGameplay(GameObject pikachu){
         animatorController = pikachu.GetComponent<CharacterAnimatorController>();
         animAtionController = pikachu.GetComponent<PikAnimAtionController>();
+        //particleController = pikachu.GetComponent<ParticleController>();
         CacaSpawner = pikachu.GetComponent<PrefabSpawner>();
         lightningSpawner = pikachu.transform.Find("thor").GetComponent<PrefabSpawner>();
         scheduler.cestParti();
@@ -148,6 +150,7 @@ public class PetController : MonoBehaviour
 
         isSad = true;
         animAtionController.launchGhost();
+        // particleController.PlayParticles();
         //animator.SetBool("IsSad", true);
     }
     private void seFaireFoudroyer(){
