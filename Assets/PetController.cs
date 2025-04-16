@@ -110,11 +110,12 @@ public class PetController : MonoBehaviour
         }
         
         // Update sadness state
-        if (needs.sadnessLevel > needs.sadnessCriticalThreshold && !isSad)
+        if (needs.sadnessLevel > needs.sadnessCriticalThreshold)
         {
             pleurer();
         }
         else if (needs.sadnessLevel < needs.sadnessCriticalThreshold && isSad){
+            //attention ce bout de code ne sert à rien
             isSad = false;
             //animator.SetBool("IsSad", false);
         }
@@ -130,6 +131,7 @@ public class PetController : MonoBehaviour
         poopCount += 1; //ne sert plus à rien
 
         //todo animation
+        needs.sadnessLevel += 3;
         float chier_time = 1.0f;
         animatorController.delayedSetPooping(0);
         animatorController.delayedSetIdle(1.2f);
@@ -149,7 +151,9 @@ public class PetController : MonoBehaviour
         Debug.Log("<color=#00FF55>je pleure ouin ouin</color>");
 
         isSad = true;
+        CoinManager.Instance.AddCoins(-4);
         animAtionController.launchGhost();
+        animAtionController.delayedStopGhost(2.5f);
         // particleController.PlayParticles();
         //animator.SetBool("IsSad", true);
     }

@@ -10,7 +10,14 @@ public class PikAnimAtionController : MonoBehaviour
     // Start is called before the first frame update
     public void launchGhost()
     {
+        ps_sad.time = 0;
         ps_sad.Play();
+    }
+    public void delayedStopGhost(float delay){
+        Invoke("stopGhost", delay);
+    }
+    public void stopGhost(){
+        ps_sad.Stop();
     }
 
     public void launchAura(){
