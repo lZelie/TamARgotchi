@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6011943998041959509}
   - component: {fileID: 7069241116675152861}
   - component: {fileID: 350844279152647163}
+  - component: {fileID: 7601509212196309662}
   m_Layer: 0
   m_Name: pikachu
   m_TagString: Untagged
@@ -324,6 +325,20 @@ MonoBehaviour:
   animator: {fileID: 3931439227223672459}
   walkParameterName: IsWalking
   idleParameterName: IsIdle
+--- !u!114 &7601509212196309662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2291714653457177181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d13d78a3fd290c4c9a2c71cfd22e2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps_aura: {fileID: 2295868730897167969}
+  ps_sad: {fileID: 1444689921941280699}
 --- !u!1 &2425542667417428519
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,10 +586,85 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1392668712956778524, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392668712956778524, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392668712956778524, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766468195400975619, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2.7582664
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766468195410917830, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766468195410917831, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766468195410917883, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766468195575138654, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830710020952973404, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858019799282795790, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858019800162525409, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4365351572836887657, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
         type: 3}
       propertyPath: m_Name
       value: Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616790747562279209, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630071398136278618, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630071398136278618, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630071398136278618, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -584,6 +674,18 @@ PrefabInstance:
 --- !u!4 &659002604277840823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1043267640345949200, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 531232361668628391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1444689921941280699 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1392668712956778524, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 531232361668628391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2295868730897167969 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1766468195410917830, guid: 2d4a943b35d62b84aa20d6a30f9a6e2b,
     type: 3}
   m_PrefabInstance: {fileID: 531232361668628391}
   m_PrefabAsset: {fileID: 0}

@@ -7,6 +7,7 @@ public class PetController : MonoBehaviour
 {
     public PetNeeds needs;
     private CharacterAnimatorController animatorController;
+    private PikAnimAtionController animAtionController;
     private PrefabSpawner CacaSpawner;
     private AudioSource bruitCaca;
     private PrefabSpawner lightningSpawner;
@@ -43,6 +44,7 @@ public class PetController : MonoBehaviour
     }
     public void commencerLeGameplay(GameObject pikachu){
         animatorController = pikachu.GetComponent<CharacterAnimatorController>();
+        animAtionController = pikachu.GetComponent<PikAnimAtionController>();
         CacaSpawner = pikachu.GetComponent<PrefabSpawner>();
         lightningSpawner = pikachu.transform.Find("thor").GetComponent<PrefabSpawner>();
         scheduler.cestParti();
@@ -145,8 +147,8 @@ public class PetController : MonoBehaviour
         Debug.Log("<color=#00FF55>je pleure ouin ouin</color>");
 
         isSad = true;
+        animAtionController.launchGhost();
         //animator.SetBool("IsSad", true);
-        //todo - animation
     }
     private void seFaireFoudroyer(){
         Debug.Log("<color=yellow>Je me suis fait FOUDROYER</color>");
@@ -156,11 +158,14 @@ public class PetController : MonoBehaviour
     public void ClickedOnPikachu(){
         switch(buttonSelector.SelectedButtonIndex){
             case 0: // karma
+                Debug.Log("karma");
+                KarmaGrinding();
                 //todo faire qqch
                 break;
             case 1: // PQ - ne rien faire
                 break;
             case 2: //coeur : dance
+                Debug.Log("dancing");
                 Play();
                 break;
             default:
@@ -197,6 +202,12 @@ public class PetController : MonoBehaviour
         } else{
             Debug.Log("<color=purple>Je m'ennuie et je ne vuex plus dancer maintenant ...</color>");
         }
+    }
+
+    void KarmaGrinding(){
+        animAtionController.launchAura();
+        animAtionController.delayedStopAura(4.0f);
+        needs.karmaLevel += 10;
     }
 
     void stopDancing(){

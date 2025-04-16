@@ -27,6 +27,7 @@ public class ButtonSelector : MonoBehaviour
         }
 
         currentSelected = null;
+        SelectedButtonIndex = -1;
     }
 
     private void OnButtonClicked(Button clicked, int index)
