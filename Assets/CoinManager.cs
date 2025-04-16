@@ -5,7 +5,7 @@ public class CoinManager : MonoBehaviour
 {
     public static CoinManager Instance { get; private set; }
 
-    public UnityEvent<int> onCoinCountChange = new UnityEvent<int>();
+    public UnityEvent<string> onCoinCountChange = new UnityEvent<string>();
 
     private int coinCount = 0;
 
@@ -24,7 +24,7 @@ public class CoinManager : MonoBehaviour
     public void AddCoins(int amount)
     {
         coinCount += amount;
-        onCoinCountChange.Invoke(coinCount);
+        onCoinCountChange.Invoke(coinCount.ToString());
         Debug.Log("new coin value is : " + coinCount);
     }
 
