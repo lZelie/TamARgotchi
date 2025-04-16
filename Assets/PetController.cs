@@ -155,7 +155,7 @@ public class PetController : MonoBehaviour
         Debug.Log("<color=#00FF55>je pleure ouin ouin</color>");
 
         isSad = true;
-        CoinManager.Instance.AddCoins(-4);
+        CoinManager.Instance.AddCoins(-1);
         animAtionController.launchGhost();
         animAtionController.delayedStopGhost(2.5f);
         // particleController.PlayParticles();

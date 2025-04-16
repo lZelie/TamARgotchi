@@ -27,6 +27,7 @@ public class CoinManager : MonoBehaviour
     {
         int currentCoins = PlayerPrefs.GetInt(CoinKey, 0);
         currentCoins += amount;
+        currentCoins = Mathf.Max(currentCoins, 0);
         PlayerPrefs.SetInt(CoinKey, currentCoins);
         PlayerPrefs.Save();
 
