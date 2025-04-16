@@ -7,6 +7,8 @@ public class GiveMyAnimatorToGameManager : MonoBehaviour
     private Animator animator;
     PetController managerScript;
 
+    public RandomSoundPlayer rdsplayer;
+
     void Awake()
     {
         

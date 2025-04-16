@@ -8,6 +8,7 @@ public class PetController : MonoBehaviour
     public PetNeeds needs;
     private CharacterAnimatorController animatorController;
     private PikAnimAtionController animAtionController;
+    private RandomSoundPlayer rdsp;
     //private ParticleController particleController; //doublons du truc au dessus
     private PrefabSpawner CacaSpawner;
     private AudioSource bruitCaca;
@@ -47,6 +48,7 @@ public class PetController : MonoBehaviour
         animatorController = pikachu.GetComponent<CharacterAnimatorController>();
         animAtionController = pikachu.GetComponent<PikAnimAtionController>();
         //particleController = pikachu.GetComponent<ParticleController>();
+        rdsp =  pikachu.GetComponent<GiveMyAnimatorToGameManager>().rdsplayer;
         CacaSpawner = pikachu.GetComponent<PrefabSpawner>();
         lightningSpawner = pikachu.transform.Find("thor").GetComponent<PrefabSpawner>();
         scheduler.cestParti();
@@ -202,6 +204,7 @@ public class PetController : MonoBehaviour
     {
         if(!isDancing){
             // Reduce sadness
+            rdsp.PlayRandomSound();
             needs.sadnessLevel -= 40f;
             needs.karmaLevel += 3f;
             isDancing = true;

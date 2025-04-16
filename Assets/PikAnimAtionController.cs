@@ -6,11 +6,14 @@ public class PikAnimAtionController : MonoBehaviour
 {
     [SerializeField] ParticleSystem ps_aura;
     [SerializeField] ParticleSystem ps_sad;
+    [SerializeField] AudioSource as_ghost;
+    [SerializeField] AudioSource as_aura;
     
     // Start is called before the first frame update
     public void launchGhost()
     {
         ps_sad.time = 0;
+        as_ghost.Play();
         ps_sad.Play();
     }
     public void delayedStopGhost(float delay){
@@ -21,6 +24,7 @@ public class PikAnimAtionController : MonoBehaviour
     }
 
     public void launchAura(){
+        as_aura.Play();
         ps_aura.Play();
     }
 
