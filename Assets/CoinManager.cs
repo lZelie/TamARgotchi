@@ -7,7 +7,7 @@ public class CoinManager : MonoBehaviour
 
     public UnityEvent<string> onCoinCountChange = new UnityEvent<string>();
 
-    private int coinCount = 0;
+    private const string CoinKey = "CoinCount";
 
     private void Awake()
     {
@@ -19,17 +19,23 @@ public class CoinManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        onCoinCountChange.Invoke(GetCoinCount().ToString());
     }
 
     public void AddCoins(int amount)
     {
-        coinCount += amount;
-        onCoinCountChange.Invoke(coinCount.ToString());
-        Debug.Log("new coin value is : " + coinCount);
+        int currentCoins = PlayerPrefs.GetInt(CoinKey, 0);
+        currentCoins += amount;
+        PlayerPrefs.SetInt(CoinKey, currentCoins);
+        PlayerPrefs.Save();
+
+        onCoinCountChange.Invoke(currentCoins.ToString());
+        Debug.Log("new coin value is : " + currentCoins);
     }
 
     public int GetCoinCount()
     {
-        return coinCount;
+        return PlayerPrefs.GetInt(CoinKey, 0);
     }
 }
