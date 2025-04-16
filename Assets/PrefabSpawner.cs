@@ -22,6 +22,8 @@ public class PrefabSpawner : MonoBehaviour
     [Header("Cone Settings")]
     public float coneAngle = 15f; // Max angle in degrees for the cone
 
+    [SerializeField] bool additionalSetUpForPoop = true;
+
     void Update()
     {
         if (Input.GetKeyDown(spawnKey))
@@ -50,6 +52,35 @@ public class PrefabSpawner : MonoBehaviour
         }
 
         GameObject obj = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+
+        if(additionalSetUpForPoop){
+            PoopCastingZawarudo myScript = obj.GetComponent<PoopCastingZawarudo>();
+            if (myScript != null)
+            {
+                myScript.setTransform(transform,2+Random.value*2);
+            }
+            else
+            {
+                Debug.LogError("zut ce n'est pas normal n'est pas trouvé sur le prefab instancié");
+            }
+
+
+            //debug
+            // Debug.Log("== Composants sur l'objet instancié ==");
+            // Component[] rootComponents = obj.GetComponents<Component>();
+            // foreach (Component comp in rootComponents)
+            // {
+            //     Debug.Log($"[Racine] Component: {comp.GetType().Name} on {comp.gameObject.name}");
+            // }
+
+            // Debug.Log("== Composants dans la hiérarchie ==");
+            // Component[] allComponents = obj.GetComponentsInChildren<Component>(true);
+            // foreach (Component comp in allComponents)
+            // {
+            //     Debug.Log($"[DansChildren] Component: {comp.GetType().Name} on {comp.gameObject.name}");
+            // }
+            //end debug
+        }
 
         Rigidbody rb = obj.GetComponent<Rigidbody>();
         if (rb == null)
