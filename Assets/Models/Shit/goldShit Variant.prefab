@@ -84,10 +84,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2076260487657568183}
-    - targetCorrespondingSourceObject: {fileID: 6230451478526015771, guid: 50002f9c9005b104c981d2ad89a6a32f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7828544568021366701}
   m_SourcePrefab: {fileID: 100100000, guid: 50002f9c9005b104c981d2ad89a6a32f, type: 3}
 --- !u!1 &6614523615476508760 stripped
 GameObject:
@@ -263,16 +259,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fb2cfc298c945fb8de951a12e92575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7828544568021366701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6614523615476508760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59e6a2f157eaa049aefe9c218963d02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seuil: 2.5
+  coinValue: 21
