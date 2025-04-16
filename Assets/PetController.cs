@@ -188,7 +188,7 @@ public class PetController : MonoBehaviour
     {
         if(!isDancing){
             // Reduce sadness
-            needs.sadnessLevel -= 20f;
+            needs.sadnessLevel -= 40f;
             needs.karmaLevel += 3f;
             isDancing = true;
             animatorController.delayedSetDance(0);
