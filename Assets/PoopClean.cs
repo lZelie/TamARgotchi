@@ -8,6 +8,8 @@ public class PoopClean : MonoBehaviour
     private PetController _petController;
     private ButtonSelector _buttonSelector;
 
+    [SerializeField] private int coinValue = 1;
+
     private void Start()
     {
         var petManager = GameObject.Find("PetManager");
@@ -20,6 +22,7 @@ public class PoopClean : MonoBehaviour
     public void CleanPoop()
     {
         if (_buttonSelector.SelectedButtonIndex != 1) return;
+        CoinManager.Instance.AddCoins(coinValue);
         _petController.Clean();
         Destroy(gameObject);
     }

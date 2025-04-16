@@ -180,6 +180,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         
         public int selectedButton = -1;
 
+        public Vector3 spawn;
+
         /// <summary>
         /// Attempts to spawn an object from <see cref="objectPrefabs"/> at the given position. The object will have a
         /// yaw rotation that faces <see cref="cameraToFace"/>, plus or minus a random angle within <see cref="spawnAngleRange"/>.
@@ -225,6 +227,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 newObject.transform.parent = transform;
 
             newObject.transform.position = spawnPoint;
+            spawn = spawnPoint;
             EnsureFacingCamera();
 
             var facePosition = m_CameraToFace.transform.position;
