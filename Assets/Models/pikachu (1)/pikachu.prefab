@@ -301,6 +301,7 @@ MonoBehaviour:
   direction: {x: 0, y: 180, z: 0.7071068}
   spawnKey: 102
   coneAngle: 15
+  additionalSetUpForPoop: 1
 --- !u!114 &350844279152647163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +426,7 @@ MonoBehaviour:
   direction: {x: 0, y: 1, z: 0}
   spawnKey: 107
   coneAngle: 0
+  additionalSetUpForPoop: 0
 --- !u!1001 &514331490808251912
 PrefabInstance:
   m_ObjectHideFlags: 0
