@@ -141,6 +141,8 @@ public class PetController : MonoBehaviour
             float rddelay = Random.value / 4.0f;
             CacaSpawner.delayedSpawnedWithImmulse(chier_time+rddelay);
         }
+        needs.poopLevel = 0f;
+        majLesProgressBar();
         //animator.SetBool("IsPooping", true);
     }
     public void bruitChier(){
